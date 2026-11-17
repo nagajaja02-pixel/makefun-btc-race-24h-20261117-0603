@@ -27,7 +27,7 @@ await runBars({
       if (state.cash < BigInt(state.hello.fees.min_notional_quote_units)) return [];
       peak = close;
       entered = true;
-      return [{ side: 'buy', symbol: SYMBOL, notional_quote_units: state.cash,
+      return [{ side: 'buy', symbol: SYMBOL, notional_quote_units: state.cash * 99n / 100n,
         max_slippage_bps: 10_000 }];
     }
     if (close > peak) peak = close;
